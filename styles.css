@@ -13,23 +13,38 @@ body{
 }
 
 .textBox{
-    background-color: whitesmoke;
+    background-color: #fff;
     width: 60%;
     text-align: center;
     display: block;
     margin: 0 auto;
     position: relative;
     top: 50%;
-    height: 50px;
+    height: 100px;
     border: thin;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     border-radius: 10px;
     outline: none;
     
 }
-.button{
+#swapButton{
+    background-image: url(bilder/sort.svg);
+    background-size: cover;
+    background-position: center center;
+    background-color: transparent;
+    display: block;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 53.9%;
+    right: 75px;
+    border: none;
+    outline: none;
+    
+}
+#showTableButton{
     width: 40%;
-    height: 50px;
+    height: 100px;
     position: relative;
     top: 72%;
     margin: 0 auto;
@@ -37,8 +52,9 @@ body{
     border: thin;
     color: #fff;
     background-color: #1CE1E8;
-    font-size: 22px;
+    font-size: 2rem;
     outline: none;
+    border-radius: 15px;
 }
 .button:focus{
 
