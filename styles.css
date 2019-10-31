@@ -10,5 +10,42 @@ body{
     background-attachment: fixed;
     background-size: cover;
     margin: 0px;
+}
 
+.textBox{
+    background-color: whitesmoke;
+    width: 60%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    height: 50px;
+    border: thin;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    outline: none;
+    
+}
+.button{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    top: 72%;
+    margin: 0 auto;
+    display: block;
+    border: thin;
+    color: #fff;
+    background-color: #1CE1E8;
+    font-size: 22px;
+    outline: none;
+}
+.button:focus{
+
+}
+#stationTextBox{
+    
+}
+#destinationTextBox{
+    
 }
