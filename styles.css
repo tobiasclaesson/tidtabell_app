@@ -1,0 +1,14 @@
+body{
+    margin: 0px;
+}
+#index_background{
+    width: 100%;
+    height: 100vh;
+    background-image: url(bilder/Subway1.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+
+}
