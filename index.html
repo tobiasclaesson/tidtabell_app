@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="index_background">
-            <input type="text" class="textBox" id="stationTextBox" placeholder="Jag vill åka från...">
-            <br>
-            <input type="text" class="textBox" id="destinationTextBox" placeholder="Jag vill åka till...">
+<head>
+    <title>Tidtabell</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body onload="_loadVals()">
+    <div id="index_background">
+        <input type="text" class="textBox" id="stationTextBox" placeholder="Jag vill åka från...">
+        <br>
+        <input type="text" class="textBox" id="destinationTextBox" placeholder="Jag vill åka till...">
 
-            <button type="button" class="button" id="showTableButton">Visa tabell</button>
+        <button type="button" class="button" id="showTableButton" onclick="showTable()">Visa tabell</button>
 
-            <button type="button" class="button" id="swapButton"></button>
+        <button type="button" class="button" id="swapButton" onclick="swapText()"></button>
 
-        </div>
-    </body>
+    </div>
+    
+</body>
 </html>
