@@ -7,16 +7,31 @@
     <script src="script.js"></script>
 </head>
 <body onload="_loadVals()">
-    <div id="index_background">
+<div id="indexBackground">
+    <div id="topDiv">
+
+    </div>
+    <div id="midDiv">
+        <hr class="whiteHr">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <input type="text" class="textBox" id="stationTextBox" placeholder="Jag vill åka från...">
+        <br>
+        <button type="button" class="button" id="swapButton" onclick="swapText()"></button>
+        <br>
+        <br>
+        <br>
         <br>
         <input type="text" class="textBox" id="destinationTextBox" placeholder="Jag vill åka till...">
 
-        <button type="button" class="button" id="showTableButton" onclick="showTable()">Visa tabell</button>
-
-        <button type="button" class="button" id="swapButton" onclick="swapText()"></button>
-
     </div>
-    
+    <div id="botDiv">
+            <button type="button" class="button" id="showTableButton" onclick="showTable()">Visa tabell</button>
+    </div>
+</div>
 </body>
 </html>

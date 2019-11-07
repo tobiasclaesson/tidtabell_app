@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
-<body id="tabellBody" onload="loadVals()">
+<body id="tabellBody" onload="loadVals(); runFunction()">
     <header>
         <div onclick="goBack()">Avbryt</div>
     </header>
+    <main>
+        <hr class="greyHr">
+        <h2 id="avgångarFrån"></h2>
+        <div id="avgångar"></div>
+    </main>
 </body>
 </html>
