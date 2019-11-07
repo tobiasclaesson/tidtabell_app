@@ -8,6 +8,7 @@ var siteId;
 
 function loadVals(){
     //test för att se se variabler i consol.
+    laddaData();
     currentStation = localStorage.getItem("_currentStation");
     destination = localStorage.getItem("_destination");
     siteId = localStorage.getItem("_siteId");
@@ -108,6 +109,8 @@ function showTable(){
     //för att kunna öppna de på annat html page samt byter page till tabell.html.
     currentStation = document.getElementById("stationTextBox").value;
     destination = document.getElementById("destinationTextBox").value;
+
+    sparaData();
 
     localStorage.setItem("_currentStation", currentStation);
     localStorage.setItem("_destination", destination);
