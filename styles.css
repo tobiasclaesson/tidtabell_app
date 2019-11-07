@@ -1,9 +1,6 @@
 body{
     margin: 0px;
 }
-#tabellBody{
-    
-}
 header{
     height: 8vh;
     position: relative;
@@ -12,6 +9,9 @@ header{
     color: #1CE1E8;
     font-size: 1.2rem;
     background-color: #EEEEEE;
+}
+main{
+    padding: 2%;
 }
 body{
     height: 93vh;
