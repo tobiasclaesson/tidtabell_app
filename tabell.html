@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tidtabell</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    
 </head>
-<body id="tabellBody" onload="loadVals(); runFunction(); setInterval('runFunction()', 10000)">
+<body id="tabellBody" onload="runFunction(); setInterval('runFunction()', 20000)">
     <header>
-        <div onclick="goBack()">Avbryt</div>
+        <div onclick="goBack()">Byt station</div>
     </header>
     <main>
         <hr class="greyHr">
         <h2 id="avgångarFrån"></h2>
         <div id="avgångar"></div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
