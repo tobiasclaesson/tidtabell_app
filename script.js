@@ -1,6 +1,6 @@
-
-//SL Platsuppslag API key: 5046296e5aff4afdb0c02d020ba4fa11
-//SL Realtidsinformation 4 API key: 34945e49ddbf432f8dbf2190c14eaf39
+//Script till Tidtabell app.
+//Programmerare: Tobias Claesson
+//Datum: 19-11-08
 
 //Variabler
 var currentStation = "";
@@ -8,22 +8,16 @@ var walkTime = 0;
 var siteId;
 
 function loadVals(){
-    //test för att se se variabler i consol.
+    //Laddar in variabler från local storage
 
     currentStation = localStorage.getItem("_currentStation");
     walkTime = localStorage.getItem("_walkTime");
-    //siteId = localStorage.getItem("_siteId");
 }
 function _loadVals(){
-    //test för att se se variabler i consol.
+    //Laddar in variabler från local storage
     currentStation = localStorage.getItem("_currentStation");
 
     laddaData();
-
-    //if (currentStation != "") {
-        //document.getElementById("stationTextBox").value = currentStation;
-        //document.getElementById("destinationTextBox").value = destination;
-    //}
 }
 function runFunction(){
     //Nollställer avgångar och kör funktionerna platsuppslag och realTimeInfo.
@@ -36,7 +30,6 @@ function runFunction(){
 }
 function platsuppslag(_currentStation){
     //Hämtar sideId för currentStation via Platsuppslag API
-    //loadVals();
     document.getElementById("avgångarFrån").innerHTML = "Avgångar från " + currentStation;
     const url = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/typeahead.json?key=5046296e5aff4afdb0c02d020ba4fa11&searchstring=" + currentStation + "&stationsonly=True&maxresults=1";
     fetch(url)
@@ -57,9 +50,6 @@ function platsuppslag(_currentStation){
 }
 function realTimeInfo(_siteId){
     //Skriver ut avgångsinformation med data från Realtidsinformation API.
-    //loadVals();
-    //let currentTime = Date.parse("2019-11-08T10:55:25");
-    //let currentTime = Date.parse("YYYY-MM-DDTHH:mm:ss");
     console.log(_siteId + " realtimeinfo1");
     let currentTime = new Date();
     let avgångTime;
@@ -82,6 +72,7 @@ function realTimeInfo(_siteId){
                 diffMins = (avgångTime - currentTime) / 1000 / 60;
                 diffWalk = diffMins - walkTime;
                 gåOm = (Math.floor(diffMins - walkTime)) + " min";
+                //Sätter variabeln gåOm till "Nu" om avgången går om 0 min.
                 if (gåOm == (0 + " min")) {
                     gåOm = "Nu";
                 }
@@ -111,9 +102,6 @@ function realTimeInfo(_siteId){
                         div.innerHTML += text;
                     }
                 }
-                /* else{
-                    div.innerHTML += "Fel";
-                } */
             })
         })
     .catch(function (error) {
