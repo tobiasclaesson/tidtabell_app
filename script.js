@@ -13,12 +13,12 @@ function loadVals(){
     currentStation = localStorage.getItem("_currentStation");
     walkTime = localStorage.getItem("_walkTime");
 }
-function _loadVals(){
+/* function _loadVals(){
     //Laddar in variabler från local storage
     currentStation = localStorage.getItem("_currentStation");
 
     laddaData();
-}
+} */
 function runFunction(){
     //Nollställer avgångar och kör funktionerna platsuppslag och realTimeInfo.
     document.getElementById("avgångTable").innerHTML = "";
@@ -31,6 +31,7 @@ function runFunction(){
 function platsuppslag(_currentStation){
     //Hämtar sideId för currentStation via Platsuppslag API
     document.getElementById("avgångarFrån").innerHTML = "Avgångar från " + currentStation;
+    sparaData();
     const url = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/typeahead.json?key=5046296e5aff4afdb0c02d020ba4fa11&searchstring=" + currentStation + "&stationsonly=True&maxresults=1";
     fetch(url)
         .then((resp) => resp.json())
@@ -40,7 +41,6 @@ function platsuppslag(_currentStation){
             return infos.map(function (info) {
                 siteId = info.SiteId;
                 //localStorage.setItem("_siteId", info.SiteId);
-                console.log(siteId + " platsupp");
                 realTimeInfo(siteId);
             })
         })
@@ -50,7 +50,6 @@ function platsuppslag(_currentStation){
 }
 function realTimeInfo(_siteId){
     //Skriver ut avgångsinformation med data från Realtidsinformation API.
-    console.log(_siteId + " realtimeinfo1");
     let currentTime = new Date();
     let avgångTime;
     let text = "";
@@ -119,7 +118,8 @@ function laddaData(){
         return infos.map(function (info) {
             document.getElementById("stationTextBox").value = info.Station;
             document.getElementById("walkTimeBox").value = info.WalkTime;
-
+            console.log(info.Stations + " laddar");
+            console.log(info.WalkTime + " laddar");
             
         })
       })
@@ -135,7 +135,7 @@ function sparaData(){
       .then(function (data) {
         let infos = data.data;
         return infos.map(function (info) {
-            
+            console.log(currentStation + " sparar");
         })
       })
       .catch(function (error) {
