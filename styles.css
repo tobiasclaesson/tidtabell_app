@@ -1,27 +1,32 @@
 html{
     
-}
-body{
-    width: 100%;
     margin: 0px;
+    padding: 0px;
 }
+
 header{
+    width: 100vw;
     height: 8vh;
-    position: relative;
-    top: 3vh;
-    left: 7%;
-    color: #1CE1E8;
     font-size: 1.2rem;
-    background-color: #EEEEEE;
+    background-color: #2e2e28;
 }
 main{
     width: 100vw;
-    padding: 2%;
+    color: #bfc734;
+    padding: 0px;
+    
 }
 body{
     width: 100vw;
     height: 93vh;
-    background-color: #EEEEEE;
+    margin: 0px;
+    background-color: #2e2e28;
+    
+}
+#bytStation{
+    padding: 22px 15px;
+    color: #bfc734;
+    cursor: pointer;
 }
 #indexBackground{
     width: 100vw;
@@ -36,41 +41,40 @@ body{
 #topDiv{
     height: 50vh;
     width: 100vw;
-    margin: 0 auto;
 }
 #midDiv{
     width: 100vw;
     height: 35vh;
     background-color: rgb(46, 46, 51, 90%);
-    margin: 0 auto;
-    padding: 0px;
+    
 
 }
 #botDiv{
     width: 100vw;
     height: 15vh;
-    margin: 0 auto;
+
     background-color: rgb(46, 46, 51, 90%);
-    padding: 0px;
+
 }
 
 .textBox{
     background-color: #fff;
-    width: 300px;
+    width: 70vw;
     text-align: center;
     display: block;
     margin: 0 auto;
     height: 50px;
     border: thin;
-    font-size: 1.2rem;
+    font-size: 16px;
     border-radius: 10px;
     outline: none;
+    font-family: 'Montserrat', sans-serif;
     
 }
 
 
 #showTableButton{
-    width: 260px;
+    width: 60vw;
     height: 50px;
     
     position: relative;
@@ -79,29 +83,42 @@ body{
     border: thin;
     color: #fff;
     background-color: #1CE1E8;
-    font-size: 1.2rem;
+    font-size: 20px;
     outline: none;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 3px solid#fff;
-    
+    font-family: 'Bitter', serif;
+    cursor: pointer;
+}
+.avgångarHeader{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
 table{
-    width: 96vw;
-    border: solid 0.5px black;
-    font-size: 1.1rem;
+    width: 95vw;
+    /* border: solid 0.5px black; */
+    font-size: 1.15rem;
     padding: 0px;
-    margin: 0;
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    color: #bfc734;
+    font-family: 'Montserrat', sans-serif;
+
 }
 #destCol{
-    width: 70vw;
+    width: 60vw;
+    margin: 0;
 }
 td{
-    width: 15vw;
+    width: 20vw;
+    margin: 0;
 }
 label{
-    padding: 40px;
-    padding-bottom: 5px;
+    padding: 0px 15vw;
     color: #fff;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
 }
 .whiteHr{
     background-color: #fff;
@@ -110,10 +127,25 @@ label{
     position: relative;
 }
 .greyHr{
-    background-color: #666;
+    background-color: #bfc734;
     height: 2px;
     border: 0;
     position: relative;
+}
+.greyHr2{
+    background-color: #bfc734;
+    height: 1px;
+    border: 0;
+    padding: 0px 10px;
+    margin: 10px;
+    position: relative;
+}
+#avgångarFrån{
+    padding: 0px 10px;
+    font-weight: normal;
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 26px;
+
 }
 
 .textBox:focus{

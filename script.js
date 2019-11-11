@@ -66,9 +66,8 @@ function realTimeInfo(_siteId){
             let infos = data.ResponseData.Metros;
 
             return infos.map(function (info) {
+                //Räknar ut mellanskillnaden medan tid till avgång och walkTime.
                 avgångTime = new Date(Date.parse(info.ExpectedDateTime));
-                
-
                 diffMins = (avgångTime - currentTime) / 1000 / 60;
                 diffWalk = diffMins - walkTime;
                 gåOm = (Math.floor(diffMins - walkTime)) + " min";

@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tidtabell</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+
     
 </head>
 <body id="tabellBody" onload="runFunction(); setInterval('runFunction()', 30000)">
     <header>
-        <div onclick="goBack()">Byt station</div>
+        <div id="bytStation" onclick="goBack()"> &lt; Byt station</div>
     </header>
     <main>
         <hr class="greyHr">
-        <h2 id="avgångarFrån"></h2>
-        <div id="avgångar">
+        <div id="avgångarHeader">
+            <h2 id="avgångarFrån"></h2>
             <table>
                 <tr>
-                    <td id="destCol">Destination</td>
+                    <td id="destCol"># Destination</td>
                     <td>Avgång</td>
                     <td>Gå om</td>
                 </tr>
             </table>
+            <hr class="greyHr2">
         </div>
         <div id="avgångTable"></div>
     </main>
