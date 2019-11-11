@@ -1,4 +1,8 @@
+html{
+    
+}
 body{
+    width: 100%;
     margin: 0px;
 }
 header{
@@ -11,14 +15,16 @@ header{
     background-color: #EEEEEE;
 }
 main{
+    width: 100vw;
     padding: 2%;
 }
 body{
+    width: 100vw;
     height: 93vh;
     background-color: #EEEEEE;
 }
 #indexBackground{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: url(bilder/backgroundx1.jpeg);
     background-position: center center;
@@ -29,11 +35,11 @@ body{
 }
 #topDiv{
     height: 50vh;
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
 }
 #midDiv{
-    width: 100%;
+    width: 100vw;
     height: 35vh;
     background-color: rgb(46, 46, 51, 90%);
     margin: 0 auto;
@@ -41,7 +47,7 @@ body{
 
 }
 #botDiv{
-    width: 100%;
+    width: 100vw;
     height: 15vh;
     margin: 0 auto;
     background-color: rgb(46, 46, 51, 90%);
@@ -50,47 +56,52 @@ body{
 
 .textBox{
     background-color: #fff;
-    width: 540px;
+    width: 300px;
     text-align: center;
     display: block;
     margin: 0 auto;
-
-    
-    height: 100px;
+    height: 50px;
     border: thin;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     border-radius: 10px;
     outline: none;
     
 }
-#swapButton{
-    background-image: url(bilder/sort.svg);
-    background-size: cover;
-    background-position: center center;
-    background-color: transparent;
-    display: block;
-    width: 65px;
-    height: 65px;
-    position: absolute;
-    right: 10%;
-    border: none;
-    outline: none;
-    
-}
+
+
 #showTableButton{
-    width: 440px;
-    height: 100px;
+    width: 260px;
+    height: 50px;
+    
     position: relative;
     margin: 0 auto;
     display: block;
     border: thin;
     color: #fff;
     background-color: #1CE1E8;
-    font-size: 2rem;
+    font-size: 1.2rem;
     outline: none;
     border-radius: 15px;
     border: 3px solid#fff;
     
+}
+table{
+    width: 96vw;
+    border: solid 0.5px black;
+    font-size: 1.1rem;
+    padding: 0px;
+    margin: 0;
+}
+#destCol{
+    width: 70vw;
+}
+td{
+    width: 15vw;
+}
+label{
+    padding: 40px;
+    padding-bottom: 5px;
+    color: #fff;
 }
 .whiteHr{
     background-color: #fff;

@@ -21,7 +21,7 @@ function _loadVals(){
 }
 function runFunction(){
     //Nollställer avgångar och kör funktionerna platsuppslag och realTimeInfo.
-    document.getElementById("avgångar").innerHTML = "";
+    document.getElementById("avgångTable").innerHTML = "";
     loadVals();
     platsuppslag(currentStation);
     //console.log(siteId + " runFunc");
@@ -58,7 +58,7 @@ function realTimeInfo(_siteId){
     let diffWalk;
     let gåOm;
     
-    const div = document.getElementById("avgångar");
+    const div = document.getElementById("avgångTable");
     const url = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/realtimedeparturesV4.json?key=34945e49ddbf432f8dbf2190c14eaf39&siteid=" + _siteId + "&timewindow=25";
     fetch(url)
             .then((resp) => resp.json())
@@ -76,12 +76,13 @@ function realTimeInfo(_siteId){
                 if (gåOm == (0 + " min")) {
                     gåOm = "Nu";
                 }
+                
                 if(diffWalk > 0){
                     //Körs om "Nu" finns med i DisplayTime Stringen.
                     if (info.DisplayTime == "Nu"){
                         info.DisplayTime = "0 min"
                         
-                        text = info.LineNumber + " " + info.Destination + " " + info.DisplayTime + " " + gåOm + "<br>";
+                        text = "<tr><td>" + info.LineNumber + " " + info.Destination + "</td><td>" + info.DisplayTime + "</td><td>" + gåOm;
                         div.innerHTML += text;
                     }
                     //Körs om tecknet ":" finns i DisplayTime.
@@ -92,15 +93,16 @@ function realTimeInfo(_siteId){
 
                         info.DisplayTime = Math.floor(diffMins) + " min";
 
-                        text = info.LineNumber + " " + info.Destination + " " + info.DisplayTime + " " + gåOm + "<br>";
+                        text = "<table><tr><td id='destCol'>" + info.LineNumber + " " + info.Destination + "</td><td>" + info.DisplayTime + "</td><td>" + gåOm + "</td></tr></table>";
                         div.innerHTML += text;
                     }
 
                     else{
                         //Körs om inga andra villkor stämmer.
-                        text = info.LineNumber + " " + info.Destination + " " + info.DisplayTime + " " + gåOm + "<br>";
+                        text = "<table><tr><td id='destCol'>" + info.LineNumber + " " + info.Destination + "</td><td>" + info.DisplayTime + "</td><td>" + gåOm + "</td></tr></table>";
                         div.innerHTML += text;
                     }
+                    
                 }
             })
         })
