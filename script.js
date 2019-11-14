@@ -1,6 +1,6 @@
 //Script till Tidtabell app.
 //Programmerare: Tobias Claesson
-//Datum: 19-11-08
+//Datum: 19-11-14
 
 //Variabler
 var currentStation = "";
@@ -9,24 +9,15 @@ var siteId;
 
 function loadVals(){
     //Laddar in variabler från local storage
-
     currentStation = localStorage.getItem("_currentStation");
     walkTime = localStorage.getItem("_walkTime");
 }
-/* function _loadVals(){
-    //Laddar in variabler från local storage
-    currentStation = localStorage.getItem("_currentStation");
 
-    laddaData();
-} */
 function runFunction(){
     //Nollställer avgångar och kör funktionerna platsuppslag och realTimeInfo.
     document.getElementById("avgångTable").innerHTML = "";
     loadVals();
     platsuppslag(currentStation);
-    //console.log(siteId + " runFunc");
-    //loadVals();
-    //realTimeInfo(siteId);
 }
 function platsuppslag(_currentStation){
     //Hämtar sideId för currentStation via Platsuppslag API
@@ -59,7 +50,7 @@ function realTimeInfo(_siteId){
     let i = 1;
 
     const div = document.getElementById("avgångTable");
-    const url = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/realtimedeparturesV4.json?key=34945e49ddbf432f8dbf2190c14eaf39&siteid=" + _siteId + "&timewindow=120";
+    const url = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/realtimedeparturesV4.json?key=34945e49ddbf432f8dbf2190c14eaf39&siteid=" + _siteId + "&timewindow=60";
     fetch(url)
             .then((resp) => resp.json())
             .then(function (data) {
@@ -181,28 +172,15 @@ function showTable(){
     //för att kunna öppna de på annat html page samt byter page till tabell.html.
     currentStation = document.getElementById("stationTextBox").value;
     walkTime = document.getElementById("walkTimeBox").value;
-    //destination = document.getElementById("destinationTextBox").value;
 
     localStorage.setItem("_currentStation", currentStation);
     localStorage.setItem("_walkTime", walkTime);
+    
     sparaData();
-    //localStorage.setItem("_destination", destination);
 
     document.location.href = "tabell.html";
 }
-/* function swapText(){
-    //Funktion som byter plats på currentStation och destination.
-    var current = document.getElementById("stationTextBox").value;
-    var dest = document.getElementById("destinationTextBox").value;
-
-    document.getElementById("stationTextBox").value = dest;
-    document.getElementById("destinationTextBox").value = current;
-} */
 function goBack(){
     //Funktion för att gå tillbaka till index.html.
     document.location.href = "index.html";
 }
-
-/* diff = info.ExpectedDateTime - currentTime;
-                        diffMins = Math.round(diff / 60000);
-                        console.log(diffMins); */
