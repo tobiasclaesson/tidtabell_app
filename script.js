@@ -90,7 +90,7 @@ function realTimeInfo(_siteId){
                             info.DisplayTime = "0 min"
                             
                             //Om variabeln gåOm är mindre än 5 skrivs den ut i röd text, annars skrivs allt ut i gult.
-                            if (diffMins < 6) {
+                            if (diffWalk < 6) {
                                 text = "<table><tr><td id='lineCol'>" + info.LineNumber + "</td><td id='destCol'>" + dest + "</td><td>" + info.DisplayTime + "</td><td id='gåOmCol'>" + gåOm + "</td></tr></table>";
                                 div.innerHTML += text;
                                 i++;
@@ -109,7 +109,7 @@ function realTimeInfo(_siteId){
 
                             info.DisplayTime = Math.floor(diffMins) + "min";
                             //Om variabeln gåOm är mindre än 5 skrivs den ut i röd text, annars skrivs allt ut i gult.
-                            if (diffMins < 6) {
+                            if (diffWalk < 6) {
                                 text = "<table><tr><td id='lineCol'>" + info.LineNumber + "</td><td id='destCol'>" + dest + "</td><td>" + info.DisplayTime + "</td><td id='gåOmCol'>" + gåOm + "</td></tr></table>";
                                 div.innerHTML += text;
                                 i++;
@@ -122,9 +122,8 @@ function realTimeInfo(_siteId){
                         }
                         else{
                             //Körs om inga andra villkor stämmer.
-                            
                             //Om variabeln gåOm är mindre än 5 skrivs den ut i röd text, annars skrivs allt ut i gult.
-                            if (diffMins < 6) {
+                            if (diffWalk < 6) {
                                 text = "<table><tr><td id='lineCol'>" + info.LineNumber + "</td><td id='destCol'>" + dest + "</td><td>" + info.DisplayTime + "</td><td id='gåOmCol'>" + gåOm + "</td></tr></table>";
                                 div.innerHTML += text;
                                 i++;
