@@ -31,7 +31,6 @@ function platsuppslag(_currentStation){
         
             return infos.map(function (info) {
                 siteId = info.SiteId;
-                //localStorage.setItem("_siteId", info.SiteId);
                 realTimeInfo(siteId);
             })
         })
@@ -74,13 +73,13 @@ function realTimeInfo(_siteId){
                     if (gåOm == (0 + " min")){
                         gåOm = "Nu";
                     }
-                    
+                    //Körs bara om diffWalk är större än 0.
                     if(diffWalk > 0){
                         //Körs om "Nu" finns med i DisplayTime Stringen.
                         if (info.DisplayTime == "Nu"){
                             info.DisplayTime = "0 min"
                             
-                            //Om variabeln gåOm är mindre än 5 skrivs den ut i röd text, annars skrivs allt ut i gult.
+                            //Om variabeln gåOm är mindre än 6 skrivs den ut i röd text, annars skrivs allt ut i gult.
                             if (diffWalk < 6) {
                                 text = "<table><tr><td id='lineCol'>" + info.LineNumber + "</td><td id='destCol'>" + dest + "</td><td>" + info.DisplayTime + "</td><td id='gåOmCol'>" + gåOm + "</td></tr></table>";
                                 div.innerHTML += text;
@@ -99,7 +98,7 @@ function realTimeInfo(_siteId){
                             diffMins = (avgångTime - currentTime) / 1000 / 60;
 
                             info.DisplayTime = Math.floor(diffMins) + "min";
-                            //Om variabeln gåOm är mindre än 5 skrivs den ut i röd text, annars skrivs allt ut i gult.
+                            //Om variabeln gåOm är mindre än 6 skrivs den ut i röd text, annars skrivs allt ut i gult.
                             if (diffWalk < 6) {
                                 text = "<table><tr><td id='lineCol'>" + info.LineNumber + "</td><td id='destCol'>" + dest + "</td><td>" + info.DisplayTime + "</td><td id='gåOmCol'>" + gåOm + "</td></tr></table>";
                                 div.innerHTML += text;
@@ -113,7 +112,7 @@ function realTimeInfo(_siteId){
                         }
                         else{
                             //Körs om inga andra villkor stämmer.
-                            //Om variabeln gåOm är mindre än 5 skrivs den ut i röd text, annars skrivs allt ut i gult.
+                            //Om variabeln gåOm är mindre än 6 skrivs den ut i röd text, annars skrivs allt ut i gult.
                             if (diffWalk < 6) {
                                 text = "<table><tr><td id='lineCol'>" + info.LineNumber + "</td><td id='destCol'>" + dest + "</td><td>" + info.DisplayTime + "</td><td id='gåOmCol'>" + gåOm + "</td></tr></table>";
                                 div.innerHTML += text;
@@ -168,14 +167,14 @@ function sparaData(){
       });
 }
 function showTable(){
-    //Funktion som sparar ner currentStation och destination variabler
+    //Funktion som sparar ner currentStation och walkTime variabler
     //för att kunna öppna de på annat html page samt byter page till tabell.html.
     currentStation = document.getElementById("stationTextBox").value;
     walkTime = document.getElementById("walkTimeBox").value;
 
     localStorage.setItem("_currentStation", currentStation);
     localStorage.setItem("_walkTime", walkTime);
-    
+
     sparaData();
 
     document.location.href = "tabell.html";

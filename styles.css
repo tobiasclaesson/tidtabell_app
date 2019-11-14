@@ -156,21 +156,3 @@ label{
     font-size: 26px;
 
 }
-
-.textBox:focus{
-    
-}
-.textBox::-webkit-input-placeholder::before {
-    color:#666;
-    content:"Line 1\A Line 2\A Line 3\A";
-}
-
-.button:focus{
-
-}
-#stationTextBox{
-    
-}
-#destinationTextBox{
-    
-}
