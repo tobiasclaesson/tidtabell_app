@@ -69,7 +69,7 @@ body{
     border-radius: 10px;
     outline: none;
     font-family: 'Montserrat', sans-serif;
-    
+    top: 60%;
 }
 
 
@@ -78,6 +78,7 @@ body{
     height: 50px;
     
     position: relative;
+    
     margin: 0 auto;
     display: block;
     border: thin;
@@ -125,7 +126,7 @@ td{
 }
 label{
     padding: 0px 15vw;
-    color: #fff;
+    color: #bfc734;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 }
